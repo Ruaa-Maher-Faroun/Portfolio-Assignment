@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rua's Portfolio</title>
+    <link rel="icon" href="imgs/me - Copy.jpg">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <div class="active">
+            <li>
+              <span class="material-symbols-outlined"> home </span>
+            </li>
+            <li>
+              <a href="#Home">Home</a>
+            </li>
+          </div>
+          <div>
+            <li>
+              <span class="material-symbols-outlined"> person </span>
+            </li>
+            <li>
+              <a href="#AboutMe">About Me</a>
+            </li>
+          </div>
+          <div>
+            <li><span class="material-symbols-outlined"> call </span></li>
+
+            <li><a href="#Contact">Contact Me</a></li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="home" id="Home">
+        <div class="left">
+          <h3>Welcome to my site</h3>
+          <h1>Hi, I'm Rua'a Faroun, a Frontend <span> Developer. </span></h1>
+          <p>
+            I'm a computer engineering graduate from Al-Quds University who
+            completed a React JS Bootcamp with Gaza Sky Geeks and worked as a
+            frontend development trainee at TelySoft.<a href="#AboutMe"
+              >See More..</a
+            >
+          </p>
+          <div class="btn-group">
+            <a href="https://mail.google.com/mail/u/0/?hl=en-GB&tf=cm&fs=1&to=ruaa.m.faroun@gmail.com"  target="_blank">
+
+              <button class="btn1">Hire me !</button>
+            </a>
+            <a href="https://ruaa-maher-faroun-portfolio.netlify.app/#projects"  target="_blank">
+
+              <button class="btn2">See My Project</button>
+            </a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="img">
+            <img
+              src="imgs/me - Copy.jpg"
+              alt="Picture of the portfolio owner"
+            />
+          </div>
+        </div>
+        
+      </section>
+      <section id="AboutMe" class="aboutme">
+
+
+        <div class="left2">
+          <h3>About Me</h3>
+          <p>
+            I'm a computer engineering graduate from Al-Quds University who completed a React 
+            JS Bootcamp with Gaza Sky Geeks, worked as a frontend 
+            development trainee at TelySoft, and I was an exchange student in Madrid.
+            My technical strengths include being a fast learner and having
+             experience with React JS. I'm skilled in creating web pages using JavaScript, HTML, CSS, and Bootstrap.
+              Additionally, I have proficiency in using Git & Github and I'm familiar with the CSS pre-processor, Sass.
+            
+          </p>
+          <div class="btn-group">
+            <a href="files/Resume - Ruaa Faroun.pdf" target="_blank">    <button class="cv">Download CV</button></a>
+        
+          </div>
+        </div>
+        <div class="right2">
+          <div class="img2">
+            <img
+              src="imgs/Software-Engineering-PNG-Pic.png"
+              alt="Picture"
+            />
+          </div>
+        </div>
+
+      </section>
+
+      <section id="Contact" class="contact">
+        <ul>
+          <li>
+            <a target="_blank" href="https://github.com/Ruaa-Maher-Faroun">
+              <img src="imgs/github.png" alt="github image" />
+            </a>
+          </li>
+          <li>
+            <a target="_blank"
+            href="https://mail.google.com/mail/u/0/?hl=en-GB&tf=cm&fs=1&to=ruaa.m.faroun@gmail.com"
+            >
+            <img src="imgs/gmail.png" alt="gmail image" />
+          </a>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/rua-faroun/" target="_blank">
+              <img src="imgs/linkedin.png" alt="linkedin image" />
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script>
+
+      let allDivs = document.querySelectorAll("nav ul div");
+
+      allDivs.forEach(function (ele) {
+        ele.onclick = function () {
+          allDivs.forEach(function (ele) {
+          ele.classList.remove("active");
+        });
+    
+    this.classList.add("active");
+
+ 
+  };
+});
+
+window.onscroll = function () {
+  
+  const scrollPosition = window.scrollY;
+  const section1Top = 100  * window.innerHeight/100;
+  const section2Top = 200  * window.innerHeight/100;
+  // 1vh = 1/100 viewport height. So you can calculate it manually.
+//  valueInVh * window.innerHeight/100
+  allDivs.forEach(function (ele) {
+    ele.classList.remove('active');
+  });
+
+  // Determine which section is currently in view and add "active" class accordingly
+  if (scrollPosition < section1Top) {
+    allDivs[0].classList.add('active');
+  } else if (scrollPosition >= section1Top && scrollPosition < section2Top) {
+    allDivs[1].classList.add('active');
+  } else if (scrollPosition >= section2Top) {
+    allDivs[2].classList.add('active');
+  }
+};
+
+      </script> 
+  </body>
+</html>
